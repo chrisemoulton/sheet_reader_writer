@@ -20,6 +20,7 @@ module SheetReader
 
   def self.read(sheet_id, sheet_name = "")
     raise MissingEnvVars unless required_env_vars?
+    ensure_valid_key_format
 
     begin
       sheets = Google::Apis::SheetsV4::SheetsService.new
@@ -36,6 +37,10 @@ module SheetReader
   end
 
   private
+
+  def self.ensure_valid_key_format
+    ENV['GOOGLE_PRIVATE_KEY'] = ENV['GOOGLE_PRIVATE_KEY'].gsub(/\\n/, "\n")
+  end
 
   def self.rows_as_hashes(rows)
     keys, *rest = rows

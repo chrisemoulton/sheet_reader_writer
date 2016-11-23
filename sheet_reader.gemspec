@@ -1,4 +1,4 @@
-require_relative 'lib/version'
+require_relative 'lib/sheet_reader/version'
 
 Gem::Specification.new do |s|
   s.name        = 'sheet_reader'
