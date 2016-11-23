@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    google_sheet_reader (0.0.0.pre)
+    sheet_reader (0.0.0.pre)
       google-api-client (~> 0.9)
       googleauth (~> 0.5)
 
@@ -62,9 +62,9 @@ PLATFORMS
 DEPENDENCIES
   byebug
   dotenv
-  google_sheet_reader!
   minitest
   rake
+  sheet_reader!
 
 BUNDLED WITH
    1.13.6

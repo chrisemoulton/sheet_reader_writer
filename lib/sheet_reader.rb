@@ -1,8 +1,8 @@
 require 'google/apis/sheets_v4'
 require 'googleauth'
-require 'google_sheet_reader/errors'
+require 'sheet_reader/errors'
 
-module GoogleSheetReader
+module SheetReader
   REQUIRED_ENV_VARS = %w[GOOGLE_CLIENT_EMAIL
                          GOOGLE_ACCOUNT_TYPE
                          GOOGLE_PRIVATE_KEY]
@@ -10,7 +10,7 @@ module GoogleSheetReader
   # Fetches the content of a google spreadsheet
   #
   # Example:
-  #   >> GoogleSheetReader.read("1ukhJwquqRTgfX-G-nxV6AsAH726TOsKQpPJfpqNjWGg")
+  #   >> SheetReader.read("1ukhJwquqRTgfX-G-nxV6AsAH726TOsKQpPJfpqNjWGg")
   #   => [{"foo"=>"hey", "bar"=>"ho"},
   #       {"foo"=>"let's ", "bar"=>"go"}]
   #

@@ -1,4 +1,4 @@
-# Google Sheet Reader
+# Sheet Reader
 
 A gem to read [Google Sheets](https://docs.google.com/spreadsheets)
 
@@ -17,8 +17,8 @@ export GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvQIBDDANBgkqhkiG9w0B
 Now you are ready to consume the spreadsheet:
 
 ```ruby
-require 'google_sheet_reader'
-result = GoogleSheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9')
+require 'sheet_reader'
+result = SheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9')
 puts result
 ```
 which returns an array of hashes, where each hash represents a row keyed by the column names found in the first row of the spreadsheet:
@@ -37,15 +37,15 @@ This would be mapped to a spreadsheet with this structure:
 
 Notice that empty lines are mapped to `nil`
 
-By the fault `google_sheet_reader` chooses the first sheet of the document. You can specify another sheet by it's name with:
+By the fault `sheet_reader` chooses the first sheet of the document. You can specify another sheet by it's name with:
 
 ```ruby
-GoogleSheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9', "Some other sheet")
+SheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9', "Some other sheet")
 ```
 
 ## License
 
-`google_sheet_reader` is copyright © 2016 Clearbit. It is free software, and may
+`sheet_reader` is copyright © 2016 Clearbit. It is free software, and may
 be redistributed under the terms specified in the [`LICENSE`] file.
 
 [`LICENSE`]: /LICENSE
