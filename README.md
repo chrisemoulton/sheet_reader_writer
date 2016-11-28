@@ -37,7 +37,7 @@ This would be mapped to a spreadsheet with this structure:
 
 Notice that empty lines are mapped to `nil`
 
-By the fault `sheet_reader` chooses the first sheet of the document. You can specify another sheet by it's name with:
+By default `sheet_reader` chooses the first sheet of the document. You can specify another sheet by it's name with:
 
 ```ruby
 SheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9', "Some other sheet")
