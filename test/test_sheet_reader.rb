@@ -23,4 +23,10 @@ class SheetReaderTest < Minitest::Test
     result = SheetReader.read('1Q2NdvsSECbDrdOf9-C1EhzHq__3jWW3lQWDDB0mJbd8')
     assert_equal [{"foo"=>"hey", "bar"=>"ho"}, {"foo"=>"let's", "bar"=>nil}, {"foo"=>nil, "bar"=>"go"}], result
   end
+
+  def test_with_unauthorized_sheet
+    assert_raises SheetReader::Unauthorized do
+      result = SheetReader.read('1Q732RcSCYJpWZZtnKx4yXVQTgjSEbilJKznsOp-qlPE')
+    end
+  end
 end

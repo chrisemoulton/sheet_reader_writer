@@ -29,6 +29,7 @@ module SheetReader
       raw_values = sheets.get_spreadsheet_values(sheet_id, "#{sheet_name}!A:ZZ").values
     rescue Google::Apis::ClientError => e
       raise BadSheetId if e.message =~ /notFound/
+      raise Unauthorized if e.message =~ /forbidden/
     rescue
       raise Error
     end

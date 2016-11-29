@@ -12,6 +12,7 @@ module SheetReader
   end
 
   class BadSheetId < Error; end
+  class Unauthorized < Error; end
 
   class MissingEnvVars < Error
     def message

@@ -43,6 +43,12 @@ By default `sheet_reader` chooses the first sheet of the document. You can speci
 SheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9', "Some other sheet")
 ```
 
+## Error handling
+
+A non existent sheet id will raise a `SheetReader::BadSheetId`.
+An unauthorized sheet will raise a `SheetReader::Unauthorized`.
+All client errors inherit from `SheetReader::Error`.
+
 ## License
 
 `sheet_reader` is copyright © 2016 Clearbit. It is free software, and may
