@@ -46,8 +46,12 @@ SheetReader.read('1Q2NdvsSECbDrdOf9-C1WhzHq__3jWW3lQWDDB0mJbd9', "Some other she
 ## Error handling
 
 A non existent sheet id will raise a `SheetReader::BadSheetId`.
+
 An unauthorized sheet will raise a `SheetReader::Unauthorized`.
-All client errors inherit from `SheetReader::Error`.
+
+Any other error will be wrapped in a generic `SheetReader::Error`.
+
+All errors inherit from `SheetReader::Error`.
 
 ## License
 
