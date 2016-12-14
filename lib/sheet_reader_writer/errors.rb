@@ -1,4 +1,4 @@
-module SheetReader
+class SheetReaderWriter
   class Error < StandardError;
     def backtrace
       return cause.backtrace if cause
@@ -18,7 +18,7 @@ module SheetReader
     def message
       "Missing environment variables for the service account.\n" \
       "Please provide #{REQUIRED_ENV_VARS.join(', ')}.\n" \
-      "See https://github.com/clearbit/sheet_reader for more info.\n"
+      "See https://github.com/clearbit/sheet_reader_writer for more info.\n"
     end
   end
 end
