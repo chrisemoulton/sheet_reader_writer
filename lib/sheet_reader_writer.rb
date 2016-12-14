@@ -105,7 +105,7 @@ class SheetReaderWriter
 
     keys = row_hashes.map do |row_hash|
       row_hash.keys
-    end.flatten.uniq.sort
+    end.flatten.uniq
 
     values_array = row_hashes.map do |row_hash|
       keys.map do |key|
