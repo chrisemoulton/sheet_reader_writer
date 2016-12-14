@@ -34,12 +34,23 @@ class SheetReaderWriterTest < Minitest::Test
     values = [
       {"foo"=>"hey", "bar"=>"ho"},
       {"foo"=>"let's"},
+      {"foo"=>"this should be set to nil in the next write as unspecified
+       values should be assumed to be set to empty", "bar" =>"go"},
+      {"foo"=>"today", "bar"=>today.to_s}
+    ]
+    sr.write(values)
+
+    today = Date.today
+    values = [
+      {"foo"=>"hey", "bar"=>"ho"},
+      {"foo"=>"let's"},
       {"bar" =>"go"},
       {"foo"=>"today", "bar"=>today.to_s}
     ]
-
     sr.write(values)
+
     result = sr.read
+
     assert_equal [
       {"foo"=>"hey", "bar"=>"ho"},
       {"foo"=>"let's", "bar" => nil},

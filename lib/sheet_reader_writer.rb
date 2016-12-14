@@ -109,7 +109,7 @@ class SheetReaderWriter
 
     values_array = row_hashes.map do |row_hash|
       keys.map do |key|
-        row_hash[key]
+        row_hash[key] || ""
       end
     end
 
