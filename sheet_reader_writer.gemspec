@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/cleabit/sheet_reader_writer'
   s.license     = 'MIT'
   s.add_runtime_dependency 'googleauth', '~> 0.5'
-  s.add_runtime_dependency 'google-api-client', '~> 0.9'
+  s.add_runtime_dependency 'google-api-client', '~> 0.12'
 end
