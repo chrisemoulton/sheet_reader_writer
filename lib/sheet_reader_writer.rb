@@ -122,8 +122,8 @@ class SheetReaderWriter
     rescue Google::Apis::ClientError => e
       raise BadSheetId if e.message =~ /notFound/
       raise Unauthorized if e.message =~ /forbidden/
-    rescue
-      raise Error
+    rescue StandardError => e
+      raise e
     end
   end
 
