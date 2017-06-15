@@ -49,7 +49,7 @@ class SheetReaderWriter
   #
   def read(sheet_name = "")
     with_exceptions do
-      raw_values = @sheet_service.get_spreadsheet_value(@sheet_id, "#{sheet_name}!A:ZZ").values
+      raw_values = @sheet_service.get_spreadsheet_values(@sheet_id, "#{sheet_name}!A:ZZ").values
       rows_as_hashes(raw_values)
     end
   end
