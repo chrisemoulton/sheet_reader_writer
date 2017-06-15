@@ -78,6 +78,15 @@ class SheetReaderWriter
     end
   end
 
+  # Get Spreadsheet titles
+  # 
+  def names
+    with_exceptions do
+      sheets = @sheet_service.get_spreadsheet(@sheet_id).sheets
+      sheets.map(&:properties).map(&:title)
+    end
+  end
+
   # Clears a google spreadsheet
   #
   # Example:
